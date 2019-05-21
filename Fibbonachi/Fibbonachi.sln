@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibbonachi", "Fibbonachi\Fibbonachi.csproj", "{CFFE1D66-03C1-43E9-B96A-43605DC49439}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFFE1D66-03C1-43E9-B96A-43605DC49439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFFE1D66-03C1-43E9-B96A-43605DC49439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFFE1D66-03C1-43E9-B96A-43605DC49439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFFE1D66-03C1-43E9-B96A-43605DC49439}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF9F2BE1-43C2-4385-A4FE-59D743188C95}
+	EndGlobalSection
+EndGlobal

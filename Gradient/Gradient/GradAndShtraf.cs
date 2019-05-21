@@ -1,5 +1,4 @@
-
-using System;
+Ôªøusing System;
 using System.Threading;
 
 namespace Gradient
@@ -9,15 +8,15 @@ namespace Gradient
         public double x;
         public double y;
 
-        public Grad(double a, double b)
+        public Grad(double a,double b)
         {
-            x = a;
-            y = b;
+            x=a;
+            y=b;
         }
 
         public double Function()
         {
-            double f = 11 * Math.Pow((y - x * x), 2) + Math.Pow((1 - x), 2);
+            double f = 11 * Math.Pow((y - x * x), 2)+Math.Pow((1-x),2);
             return f;
         }
 
@@ -33,11 +32,11 @@ namespace Gradient
             return result;
         }
 
-        public static double Check(double x, double y, int r)
+        public static double Check(double x, double y,int r)
         {
             if (Grad.ShFunction(x, y) > 0)
             {
-                double result = (1 / (x + y - 2)) * r;
+                double result = (1/(x+y-2))* r;
                 return result;
             }
             else
@@ -49,13 +48,13 @@ namespace Gradient
 
         public double Gdx()
         {
-            double dU = -2 * x * (-11 * x * x + 11 * y) - 22 * x * (-x * x + y) + 2 * x - 2;
+            double dU = -2*x*(-11*x*x+11*y)-22*x*(-x*x+y)+2*x-2;
             return dU;
         }
 
         public double Gdy()
         {
-            double dU = -22 * x * x + 22 * y;
+            double dU =  -22 * x*x  + 22 * y;
             return dU;
         }
     }
@@ -63,41 +62,41 @@ namespace Gradient
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("¬‚Â‰ËÚÂ ÒÚ‡ÚÓ‚˚Â ÚÓ˜ÍË");
+            Console.WriteLine("–í–≤–µ–¥–∏—Ç–µ —Å—Ç–∞—Ä—Ç–æ–≤—ã–µ —Ç–æ—á–∫–∏");
             double x = Convert.ToDouble(Console.ReadLine());
             double y = Convert.ToDouble(Console.ReadLine());
             Grad f = new Grad(x, y);
             double eps = 0.0001;
             double h = 0.5;
-            Console.WriteLine("Õ‡˜‡Î¸ÌÓÂ ÁÌ‡˜ÂÌËÂ ÙÛÌÍˆËË");
+            Console.WriteLine("–ù–∞—á–∞–ª—å–Ω–æ–µ –∑–Ω–∞—á–µ–Ω–∏–µ —Ñ—É–Ω–∫—Ü–∏–∏");
             Console.WriteLine(f.Function());
             double x1 = 0;
             double y1 = 0;
             int r = 1;
-
+            
             while (h > eps)
             {
-                Console.WriteLine("«Ì‡˜ÂÌËÂ ÙÛÌÍˆËË {0} «Ì‡˜ÂÌËˇ ÚÓ˜ÂÍ  {1} {2}", f.Function(), f.x, f.y);
+                Console.WriteLine("–ó–Ω–∞—á–µ–Ω–∏–µ —Ñ—É–Ω–∫—Ü–∏–∏ {0} –ó–Ω–∞—á–µ–Ω–∏—è —Ç–æ—á–µ–∫  {1} {2}", f.Function(), f.x, f.y);
                 x1 = f.x - f.Gdx() * h;
                 y1 = f.y - f.Gdy() * h;
-                if (f.Function() - Grad.Check(f.x, f.y, r) > Grad.Function(x1, y1) - Grad.Check(x1, y1, r))
+                if (f.Function()-Grad.Check(f.x,f.y,r) > Grad.Function(x1, y1)-Grad.Check(x1,y1,r))
                 {
                     f.x = x1;
                     f.y = y1;
-
+                   
                 }
                 else
                 {
                     h = h / 2;
-
+                  
                 }
                 Thread.Sleep(300);
                 r++;
             }
 
-
-            Console.WriteLine("ŒÚ‚ÂÚ");
-            Console.WriteLine("{0} {1} {2}", f.Function(), f.x, f.y);
+            
+            Console.WriteLine("–û—Ç–≤–µ—Ç");
+            Console.WriteLine("{0} {1} {2}", f.Function(),f.x,f.y);
             Console.ReadKey();
             //gitcheck
         }
